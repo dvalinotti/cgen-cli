@@ -2,14 +2,8 @@ import {Command, flags} from '@oclif/command'
 import * as inquirer from "inquirer";
 import * as fs from 'fs';
 import cli from 'cli-ux';
-
-// CLI Argument Type
-type Args = {
-  name: string;
-  directory?: string;
-  type?: string;
-  styleType?: string;
-};
+import { generateTemplates } from './util';
+import { Args } from './types';
 
 class Cgen extends Command {
   // CLI description
@@ -45,22 +39,23 @@ class Cgen extends Command {
     if (!fs.existsSync(`./${args.directory}`)) {
       fs.mkdirSync(`./${args.directory}`)
     }
+    const templates = generateTemplates(args);
     // Check to see if target Component directory already exists
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir);
       const files: string[] = [
         `${dir}/${args.name}.${ args.type === 'Javascript' ? 'jsx' : 'tsx' }`,
-        `${dir}/_types.${ args.type === 'Javascript' ? 'js' : 'ts' }`,
         `${dir}/_styles.${ 
           args.styleType === 'styled-components'
             ? (args.type === 'Javascript' ? 'js' : 'ts')
             : (args.styleType === 'CSS' ? 'css' : 'scss')
         }`,
+        `${args.type === 'Javascript' ? '' : `${dir}/_types.ts` }`,
       ];
       // Write each file to directory
-      files.map((file) => {
-        if (!fs.existsSync(file)) {
-          fs.writeFileSync(file, '', { encoding: 'utf8' });
+      files.map((file, index) => {
+        if (file !== `` && !fs.existsSync(file)) {
+          fs.writeFileSync(file, templates[index], { encoding: 'utf8' });
           console.log(`Wrote file ${file}`);
         }
       });
