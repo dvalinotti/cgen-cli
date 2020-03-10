@@ -5,21 +5,21 @@ export function generateTemplates(args: Args): string[] {
 `import React, { FunctionComponent } from 'react';
 import ${
   args.styleType === 'styled-components'
-    ? `{ Styled } from './_styles';` 
+    ? `{ Styled } from './_styles'` 
     : ( args.styleType === 'CSS' 
-      ? `'./_styles.css';` 
-      : `'./_styles.scss';`
+      ? `'./_styles.css'` 
+      : `'./_styles.scss'`
 )};
 ${args.type === 'TypeScript' 
   ? `import { TestInterface } from './_types';
-  
+
 type Props = {
-  default?: string;
+  test?: string;
 };\n`
   : ``
 }
 const ${args.name} ${args.type === 'TypeScript' ? ': FunctionComponent<Props>' : ''} = (${
-  args.type === 'TypeScript' ? '{ default }: Props' : 'props'
+  args.type === 'TypeScript' ? '{ test }: Props' : 'props'
 }) => {
   return (
     ${ args.styleType === 'styled-components'
@@ -62,9 +62,7 @@ display: flex;
     color: red;
   }
 }`
-  )
-}
-  `;
+)}`;
 
   const templates = [classDef, styleDef];
   // console.log(templates[0]);
