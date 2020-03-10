@@ -10,9 +10,7 @@ generate react components
 [![License](https://img.shields.io/npm/l/cgen.svg)](https://github.com/dan-valinotti/cgen-cli/blob/master/package.json)
 
 <!-- toc -->
-- [cgen](#cgen)
-- [Usage](#usage)
-  - [Flags:](#flags)
+* [Usage](#usage)
 <!-- tocstop -->
 # Usage
 ## Flags:
@@ -23,13 +21,13 @@ generate react components
 <!-- usage -->
 ```sh-session
 $ npm install -g @dvalinotti/cgen-cli
-$ cgen
+$ cgen COMMAND
 running command...
 $ cgen (-v|--version|version)
-@dvalinotti/cgen-cli/1.0.1 darwin-x64 node-v12.14.0
+@dvalinotti/cgen-cli/1.0.2 darwin-x64 node-v12.14.0
 $ cgen --help [COMMAND]
 USAGE
-  $ cgen
+  $ cgen COMMAND
 ...
 ```
 <!-- usagestop -->
