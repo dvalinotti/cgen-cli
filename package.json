@@ -1,7 +1,7 @@
 {
   "name": "@dvalinotti/cgen-cli",
   "description": "generate react components",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "author": "Dan Valinotti @dan-valinotti",
   "bin": {
     "cgen": "./bin/run"

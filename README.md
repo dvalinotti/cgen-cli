@@ -24,7 +24,7 @@ $ npm install -g @dvalinotti/cgen-cli
 $ cgen COMMAND
 running command...
 $ cgen (-v|--version|version)
-@dvalinotti/cgen-cli/1.1.4 darwin-x64 node-v12.14.0
+@dvalinotti/cgen-cli/1.1.5 darwin-x64 node-v12.14.0
 $ cgen --help [COMMAND]
 USAGE
   $ cgen COMMAND
