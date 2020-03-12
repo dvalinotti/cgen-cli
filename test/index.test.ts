@@ -13,7 +13,7 @@ describe('cgen', () => {
       '--styleType=styled-components'
     ]))
     .it('runs MyComponent, JS, /components, styled-components', ctx => {
-      expect(fs.existsSync('./components/MyComponent/MyComponent.jsx')).to.be.true;
+      expect(fs.existsSync('./components/MyComponent/index.jsx')).to.be.true;
       expect(fs.existsSync('./components/MyComponent/_styles.js')).to.be.true;
     });
   // Javascript, SCSS
@@ -26,7 +26,7 @@ describe('cgen', () => {
       '--styleType=SCSS'
     ]))
     .it('runs MyComponent, JS, /components, SCSS', ctx => {
-      expect(fs.existsSync('./components/MyComponent/MyComponent.jsx')).to.be.true;
+      expect(fs.existsSync('./components/MyComponent/index.jsx')).to.be.true;
       expect(fs.existsSync('./components/MyComponent/_styles.scss')).to.be.true;
     });
   // Javascript, CSS
@@ -39,7 +39,7 @@ describe('cgen', () => {
       '--styleType=CSS'
     ]))
     .it('runs MyComponent, JS, /components, CSS', ctx => {
-      expect(fs.existsSync('./components/MyComponent/MyComponent.jsx')).to.be.true;
+      expect(fs.existsSync('./components/MyComponent/index.jsx')).to.be.true;
       expect(fs.existsSync('./components/MyComponent/_styles.css')).to.be.true;
     });
 
@@ -53,7 +53,7 @@ describe('cgen', () => {
       '--styleType=styled-components'
     ]))
     .it('runs MyComponent, TS, /components, styled-components', ctx => {
-      expect(fs.existsSync('./components/MyComponent/MyComponent.tsx')).to.be.true;
+      expect(fs.existsSync('./components/MyComponent/index.tsx')).to.be.true;
       expect(fs.existsSync('./components/MyComponent/_styles.ts')).to.be.true;
       expect(fs.existsSync('./components/MyComponent/_types.ts')).to.be.true;
     });
@@ -67,7 +67,7 @@ describe('cgen', () => {
       '--styleType=SCSS'
     ]))
     .it('runs MyComponent, TS, /components, SCSS', ctx => {
-      expect(fs.existsSync('./components/MyComponent/MyComponent.tsx')).to.be.true;
+      expect(fs.existsSync('./components/MyComponent/index.tsx')).to.be.true;
       expect(fs.existsSync('./components/MyComponent/_styles.scss')).to.be.true;
       expect(fs.existsSync('./components/MyComponent/_types.ts')).to.be.true;
     });
@@ -81,7 +81,7 @@ describe('cgen', () => {
       '--styleType=CSS'
     ]))
     .it('runs MyComponent, TS, /components, CSS', ctx => {
-      expect(fs.existsSync('./components/MyComponent/MyComponent.tsx')).to.be.true;
+      expect(fs.existsSync('./components/MyComponent/index.tsx')).to.be.true;
       expect(fs.existsSync('./components/MyComponent/_styles.css')).to.be.true;
       expect(fs.existsSync('./components/MyComponent/_types.ts')).to.be.true;
     });
