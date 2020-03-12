@@ -44,7 +44,7 @@ class Cgen extends Command {
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir);
       const files: string[] = [
-        `${dir}/${args.name}.${ args.type === 'Javascript' ? 'jsx' : 'tsx' }`,
+        `${dir}/index.${ args.type === 'Javascript' ? 'jsx' : 'tsx' }`,
         `${dir}/_styles.${ 
           args.styleType === 'styled-components'
             ? (args.type === 'Javascript' ? 'js' : 'ts')
